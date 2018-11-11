@@ -144,6 +144,8 @@ module.exports = (robot) ->
   robot.respond /list assigned roles/i, (msg) ->
     roles = []
     unless robot.auth.isAdmin msg.message.user
+        robot.logger.info (robot.auth.isAdmin msg.message.user)
+        robot.logger.info JSON.stringify msg.message.user
         msg.reply "Sorry, only admins can list assigned roles."
     else
         for i, user of robot.brain.data.users when user.roles

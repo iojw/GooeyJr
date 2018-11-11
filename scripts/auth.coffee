@@ -41,6 +41,12 @@ module.exports = (robot) ->
       user.name in admins
       robot.logger.info admins.toString()
       robot.logger.info 'Checking if ' + user.name.toString() + ' is admin'
+      robot.logger.info user.name in admins
+      robot.logger.info user.name.toString() in admins
+      robot.logger.info admins.includes(user.name.toString())
+      robot.logger.info admins.includes(user.name)
+      robbot.logger.info admins.indexOf(user.name.toString()) > -1
+      robot.logger.info admins.indexOf(user.name) > -1
 
     hasRole: (user, roles) ->
       userRoles = @userRoles(user)

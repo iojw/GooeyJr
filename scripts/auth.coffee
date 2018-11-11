@@ -38,9 +38,9 @@ module.exports = (robot) ->
 
   class Auth
     isAdmin: (user) ->
-      user.name.toString() in admins
+      user.name in admins
       robot.logger.info admins.toString()
-      robot.logger.info 'Checking if' + user.name.toString() + 'is admin'
+      robot.logger.info 'Checking if ' + user.name.toString() + ' is admin'
 
     hasRole: (user, roles) ->
       userRoles = @userRoles(user)

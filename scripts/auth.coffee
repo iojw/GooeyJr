@@ -45,7 +45,7 @@ module.exports = (robot) ->
       robot.logger.info user.name.toString() in admins
       robot.logger.info admins.includes(user.name.toString())
       robot.logger.info admins.includes(user.name)
-      robbot.logger.info admins.indexOf(user.name.toString()) > -1
+      robot.logger.info admins.indexOf(user.name.toString()) > -1
       robot.logger.info admins.indexOf(user.name) > -1
 
     hasRole: (user, roles) ->

@@ -39,14 +39,6 @@ module.exports = (robot) ->
   class Auth
     isAdmin: (user) ->
       user.name in admins
-      robot.logger.info admins.toString()
-      robot.logger.info 'Checking if ' + user.name.toString() + ' is admin'
-      robot.logger.info user.name in admins
-      robot.logger.info user.name.toString() in admins
-      robot.logger.info admins.includes(user.name.toString())
-      robot.logger.info admins.includes(user.name)
-      robot.logger.info admins.indexOf(user.name.toString()) > -1
-      robot.logger.info admins.indexOf(user.name) > -1
 
     hasRole: (user, roles) ->
       userRoles = @userRoles(user)
@@ -144,8 +136,6 @@ module.exports = (robot) ->
   robot.respond /list assigned roles/i, (msg) ->
     roles = []
     unless robot.auth.isAdmin msg.message.user
-        robot.logger.info (robot.auth.isAdmin msg.message.user)
-        robot.logger.info JSON.stringify msg.message.user
         msg.reply "Sorry, only admins can list assigned roles."
     else
         for i, user of robot.brain.data.users when user.roles

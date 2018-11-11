@@ -39,7 +39,7 @@ module.exports = (robot) ->
   class Auth
     isAdmin: (user) ->
       user.id.toString() in admins
-      robot.logger.info user.toString()
+      robot.logger.info JSON.stringify(user)
 
     hasRole: (user, roles) ->
       userRoles = @userRoles(user)
